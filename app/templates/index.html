@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
+
+{% block share %}
+  <h3>Sharing is caring</h3>
+  <a href="#">Facebook</a>
+  <a href="#">Twitter</a>
+  <a href="#">LinkedIn</a>
+{% endblock %}
