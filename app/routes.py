@@ -32,7 +32,7 @@ def index():
             'body': 'The Avengers movie was so cool'
         }
     ]
-    return render_template('index.flask', title='Home', posts=posts)
+    return render_template('index.html.j2', title='Home', posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -54,7 +54,7 @@ def login():
 
         return redirect(next_page)
 
-    return render_template('login.flask', title='Sign In', form=form)
+    return render_template('login.html.j2', title='Sign In', form=form)
 
 @app.route('/logout')
 def logout():
@@ -75,7 +75,7 @@ def register():
         flash('Congratulations, you are now a registered user.')
         return redirect(url_for('login'))
 
-    return render_template('register.flask', title='Register', form=form)
+    return render_template('register.html.j2', title='Register', form=form)
 
 
 @app.route('/user/<username>')
@@ -86,4 +86,4 @@ def user(username):
         {'author': user, 'body': 'Test post #1'},
         {'author': user, 'body': 'Test post #2'}
     ]
-    return render_template('user.flask', user=user, posts=posts)
+    return render_template('user.html.j2', user=user, posts=posts)
