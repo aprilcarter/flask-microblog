@@ -14,8 +14,13 @@ from flask_login import (
     login_required
 )
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
-from app.models import User
+from app.forms import (
+    LoginForm,
+    RegistrationForm,
+    EditProfileForm,
+    PostForm
+)
+from app.models import User, Post
 
 @app.before_request
 def before_request():
@@ -23,22 +28,19 @@ def before_request():
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    user = {'username': 'april'}
-    posts = [
-        {
-            'author': {'username': 'Piglet'},
-            'body': 'Beautiful day in Portland'
-        },
-        {
-            'author': {'username': 'Tigger'},
-            'body': 'The Avengers movie was so cool'
-        }
-    ]
-    return render_template('index.html.j2', title='Home', posts=posts)
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post is now live!')
+        return redirect(url_for('index'))
+    posts = current_user.followed_posts().all()
+    return render_template('index.html.j2', title='Home Page', posts=posts, form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
