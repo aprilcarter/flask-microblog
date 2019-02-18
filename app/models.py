@@ -3,6 +3,7 @@ from datetime import datetime
 from time import time
 from hashlib import md5
 from flask_login import UserMixin
+import jwt
 from app import db, login, app
 
 followers = db.Table(
