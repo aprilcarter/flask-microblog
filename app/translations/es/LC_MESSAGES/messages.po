@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-02-18 23:48-0500\n"
+"POT-Creation-Date: 2019-02-19 22:23-0500\n"
 "PO-Revision-Date: 2019-02-18 23:57-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -20,136 +20,313 @@ msgstr ""
 
 #: app/__init__.py:21
 msgid "Please log in to access this page."
-msgstr ""
+msgstr "Por favor inicie sesión para acceder a esta página."
 
 #: app/email.py:19
 msgid "[Microblog] Reset Your Password"
-msgstr ""
+msgstr "[Microblog] Restablecer su contraseña"
 
 #: app/forms.py:20 app/forms.py:27 app/forms.py:46
 msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: app/forms.py:21 app/forms.py:29 app/forms.py:73
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: app/forms.py:22
 msgid "Remember Me"
-msgstr ""
+msgstr "Recuérdame"
 
-#: app/forms.py:23
+#: app/forms.py:23 app/templates/login.html.j2:5
 msgid "Sign In"
-msgstr ""
+msgstr "Registrarse"
 
 #: app/forms.py:28 app/forms.py:68
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: app/forms.py:31 app/forms.py:74
 msgid "Repeat Password"
-msgstr ""
+msgstr "Repite la contraseña"
 
-#: app/forms.py:32
+#: app/forms.py:32 app/templates/register.html.j2:5
 msgid "Register"
-msgstr ""
+msgstr "Registro"
 
 #: app/forms.py:37 app/forms.py:58
 msgid "Please use a different username."
-msgstr ""
+msgstr "Por favor use un nombre de usuario diferente."
 
 #: app/forms.py:42
 msgid "Please use a different email address."
-msgstr ""
+msgstr "Por favor utilice una dirección de correo electrónico diferente."
 
 #: app/forms.py:47
 msgid "About me"
-msgstr ""
+msgstr "Sobre mi"
 
 #: app/forms.py:48 app/forms.py:64
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: app/forms.py:62
 msgid "Say something"
-msgstr ""
+msgstr "Di algo"
 
 #: app/forms.py:69 app/forms.py:75
 msgid "Request Password Reset"
-msgstr ""
+msgstr "Petición para la recuperación de contraseña"
 
-#: app/routes.py:44
+#: app/routes.py:46
 msgid "Your post is now live!"
-msgstr ""
+msgstr "¡Tu publicación ya está en vivo!"
 
-#: app/routes.py:70
+#: app/routes.py:72
 msgid "Invalid username or password"
-msgstr ""
+msgstr "Usuario o contraseña invalido"
 
-#: app/routes.py:98
+#: app/routes.py:100
 msgid "Congratulations, you are now a registered user."
-msgstr ""
+msgstr "Enhorabuena, ahora eres un usuario registrado."
 
-#: app/routes.py:129
+#: app/routes.py:131
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Se han guardado los cambios."
 
-#: app/routes.py:142 app/routes.py:158
+#: app/routes.py:144 app/routes.py:160
 #, python-format
 msgid "User %(username)s not found."
-msgstr ""
+msgstr "Usuario %(username)s no encontrado"
 
-#: app/routes.py:145
+#: app/routes.py:147
 msgid "You cannot follow yourself!"
-msgstr ""
+msgstr "¡No puedes seguirte!"
 
-#: app/routes.py:149
+#: app/routes.py:151
 #, python-format
 msgid "You are following %(username)s!"
-msgstr ""
+msgstr "Estas siguiendo %(username)s"
 
-#: app/routes.py:161
+#: app/routes.py:163
 msgid "You cannot unfollow yourself!"
-msgstr ""
+msgstr "¡No puedes dejar de seguirte!"
 
-#: app/routes.py:165
+#: app/routes.py:167
 #, python-format
 msgid "You are not following %(username)s."
-msgstr ""
+msgstr "No estas siguiendo %(username)s."
 
-#: app/routes.py:195
+#: app/routes.py:197
 msgid "If your email is found in the system, you will get a reset link soon."
 msgstr ""
+"Si su correo electrónico se encuentra en el sistema, pronto recibirá un "
+"enlace de restablecimiento."
 
-#: app/routes.py:211
+#: app/routes.py:213
 msgid "Your password has been reset."
+msgstr "Tu contraseña ha sido restablecida."
+
+#: app/templates/404.html.j2:4
+msgid "File Not Found"
+msgstr "Archivo no encontrado"
+
+#: app/templates/404.html.j2:5 app/templates/500.html.j2:6
+msgid "Back"
+msgstr "Espalda"
+
+#: app/templates/500.html.j2:4
+msgid "An unexpected error has occurred"
+msgstr "Ha ocurrido un error inesperado"
+
+#: app/templates/500.html.j2:5
+msgid "The administrator has been notified. Sorry for the inconvenience."
 msgstr ""
+"El administrador ha sido notificado. Lo siento por los inconvenientes "
+"ocasionados."
+
+#: app/templates/_post.html.j2:15
+#, python-format
+msgid "%(username)s said %(when)s:"
+msgstr "%(username)s dijo %(when)s:"
+
+#: app/templates/_post.html.j2:17
+#, python-format
+msgid "%(content)s"
+msgstr ""
+
+#: app/templates/base.html.j2:5
+#, python-format
+msgid "%(title)s - Microblog"
+msgstr ""
+
+#: app/templates/base.html.j2:7
+msgid "Welcome to Microblog"
+msgstr "Bienvenido a Microblog"
+
+#: app/templates/base.html.j2:16
+msgid "Toggle navigation"
+msgstr "Navegación de palanca"
+
+#: app/templates/base.html.j2:21
+msgid "Microblog"
+msgstr ""
+
+#: app/templates/base.html.j2:25
+msgid "Home"
+msgstr "Cass"
+
+#: app/templates/base.html.j2:26
+msgid "Explore"
+msgstr "Explorar"
+
+#: app/templates/base.html.j2:30
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: app/templates/base.html.j2:32
+msgid "Profile"
+msgstr "Perfil"
+
+#: app/templates/base.html.j2:33
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: app/templates/base.html.j2:46
+#, python-format
+msgid "%(m)s"
+msgstr ""
+
+#: app/templates/edit_profile.html.j2:6
+msgid "Edit Profile"
+msgstr "Editar perfil"
+
+#: app/templates/index.html.j2:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "Hola"
+
+#: app/templates/index.html.j2:20 app/templates/user.html.j2:33
+msgid "Newer posts"
+msgstr "Más nuevas"
+
+#: app/templates/index.html.j2:25 app/templates/user.html.j2:36
+msgid "Older posts"
+msgstr "Más viejo"
+
+#: app/templates/index.html.j2:34
+msgid "Sharing is caring"
+msgstr "Compartir es demostrar interés"
+
+#: app/templates/index.html.j2:35
+msgid "Facebook"
+msgstr ""
+
+#: app/templates/index.html.j2:36
+msgid "Twitter"
+msgstr ""
+
+#: app/templates/index.html.j2:37
+msgid "LinkedIn"
+msgstr ""
+
+#: app/templates/login.html.j2:13
+msgid "Click to Register!"
+msgstr "Haga clic para registrarse!"
+
+#: app/templates/login.html.j2:17
+msgid "Click to Reset It"
+msgstr "Haga clic para restablecerlo"
+
+#: app/templates/login.html.j2:21
+#, python-format
+msgid "New User? %(register)s"
+msgstr "¿Usuario nuevo? %(register)s"
+
+#: app/templates/login.html.j2:23
+#, python-format
+msgid "Forgot Your Password? %(reset)s"
+msgstr "¿Olvidaste tu contraseña? %(reset)s"
+
+#: app/templates/reset_password.html.j2:4
+msgid "Reset Your Password"
+msgstr "Restablecer su contraseña"
+
+#: app/templates/reset_password_request.html.j2:5
+msgid "Reset Password"
+msgstr "Restablecer contraseña"
+
+#: app/templates/user.html.j2:8
+msgid "User"
+msgstr "Usuario"
+
+#: app/templates/user.html.j2:10
+#, python-format
+msgid "%(about)s"
+msgstr ""
+
+#: app/templates/user.html.j2:14
+msgid "Last seen on"
+msgstr "Visto por última vez en"
+
+#: app/templates/user.html.j2:16
+#, python-format
+msgid "%(followers)d followers"
+msgstr "%(followers)d seguidores"
+
+#: app/templates/user.html.j2:16
+#, python-format
+msgid "following %(following)d."
+msgstr "siguiendo %(following)d."
+
+#: app/templates/user.html.j2:18
+msgid "Edit your profile"
+msgstr "Edite su perfil"
+
+#: app/templates/user.html.j2:20
+msgid "Follow"
+msgstr "Seguir."
+
+#: app/templates/user.html.j2:22
+msgid "Unfollow"
+msgstr "Dejar de seguir"
 
 #: app/templates/email/reset_password.html.j2:1
 #, python-format
 msgid "Dear %(user)s,"
+msgstr "Querido %(user)s,"
+
+#: app/templates/email/reset_password.html.j2:4
+msgid "click here"
 msgstr ""
 
 #: app/templates/email/reset_password.html.j2:8
 #, python-format
 msgid "To reset your password %(reset)s"
-msgstr ""
+msgstr "Para restablecer su contraseña %(reset)s"
 
 #: app/templates/email/reset_password.html.j2:10
 msgid ""
 "Alternatively, you can paste the following link in your browser's address"
 " bar:"
 msgstr ""
+"Alternativamente, puede pegar el siguiente enlace en la barra de "
+"direcciones de su navegador"
 
 #: app/templates/email/reset_password.html.j2:12
 msgid "If you have not requested a password reset simply ignore this message."
 msgstr ""
+"Si no ha solicitado un restablecimiento de contraseña, simplemente ignore"
+" este mensaje."
 
 #: app/templates/email/reset_password.html.j2:13
 msgid "Sincerely,"
-msgstr ""
+msgstr "Sinceramente,"
 
 #: app/templates/email/reset_password.html.j2:14
 msgid "The Microblog Team"
-msgstr ""
+msgstr "El equipo de microblog"
+
+#~ msgid "New User?"
+#~ msgstr "¿Usuario nuevo?"
 

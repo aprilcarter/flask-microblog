@@ -1,4 +1,5 @@
 from app import app
+import os
 import click
 
 @app.cli.group()
@@ -18,7 +19,7 @@ def update():
 @translate.command()
 def compile():
     """Compile all languages."""
-    if os.systeem('pybabel compile -d app/translations'):
+    if os.system('pybabel compile -d app/translations'):
         raise RuntimeError('compile command failed')
 
 @translate.command()

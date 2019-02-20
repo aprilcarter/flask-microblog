@@ -10,11 +10,11 @@
   </div>
 
   {% set register_link %}
-    <a href="{{ url_for('register') }}">Click to Register!</a>
+    <a href="{{ url_for('register') }}">{{ _('Click to Register!') }}</a>
   {% endset %}
 
   {% set reset_link %}
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
+    <a href="{{ url_for('reset_password_request') }}">{{ _('Click to Reset It') }}</a>
   {% endset %}
 
   <br>
