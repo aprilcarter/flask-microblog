@@ -13,10 +13,10 @@ from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
-from app.main.forms import EditProfileForm, PostForm
+from app.main.forms import EditProfileForm, PostForm, SearchForm
 from app.models import User, Post
 from app.translate import translate
-from app.main import bp, SearchForm
+from app.main import bp
 
 
 @bp.before_app_request
@@ -144,7 +144,7 @@ def translate_text():
                                       request.form['source_language'],
                                       request.form['dest_language'])})
 
-@bp.route(/search)
+@bp.route('/search')
 @login_required
 def search():
     if not g.search_form.validate():
